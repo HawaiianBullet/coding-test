@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Permutation {
 
     public static void main(String[] args) {
-        int[] arr = {1, 7};
+        int[] arr = {1, 2, 3};
         int[] output = new int[arr.length];
         boolean[] visited = new boolean[arr.length];
 
