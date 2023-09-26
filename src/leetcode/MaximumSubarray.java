@@ -4,12 +4,24 @@ package leetcode;
 public class MaximumSubarray {
 
     public static int maxSubArray(int[] nums) {
-        int maxSum = Integer.MIN_VALUE;
+//        int maxSum = Integer.MIN_VALUE;
+//        for (int i = 0; i < nums.length; i++) {
+//            int tmpSum = 0;
+//            for (int j = i; j < nums.length; j++) {
+//                tmpSum += nums[j];
+//                maxSum = Math.max(maxSum, tmpSum);
+//            }
+//        }
+//        return maxSum;
+
+        int maxSum = Integer.MIN_VALUE, currentSum = 0;
         for (int i = 0; i < nums.length; i++) {
-            int tmpSum = 0;
-            for (int j = i; j < nums.length; j++) {
-                tmpSum += nums[j];
-                maxSum = Math.max(maxSum, tmpSum);
+            currentSum += nums[i];
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+            if (currentSum < 0) {
+                currentSum = 0;
             }
         }
         return maxSum;
